@@ -1,10 +1,27 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-<h1>Hello Africa!</h1>
+  <div>
+    <h1>Hello Africa!</h1>
+    <div>
+      <button @click="increment">+</button>
+      <span>{{ counter }}</span>
+      <button @click="decrement">-</button>
+    </div>
+  </div>
 </template>
+
+<script setup>
+
+
+let counter = ref(0);
+
+const increment = () => {
+  counter.value++;
+};
+
+const decrement = () => {
+  counter.value--;
+};
+</script>
 
 <style scoped>
 .logo {
@@ -13,10 +30,13 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
+
 </style>
